@@ -87,6 +87,14 @@
             const rankSpan = document.createElement('span');
             rankSpan.className = 'rank';
             rankSpan.textContent = member.rank;
+
+            if (member.note) {
+              const noteEm = document.createElement('em');
+              noteEm.style.cssText = 'font-size:0.75rem; color:var(--text-dim); margin-left:0.4rem;';
+              noteEm.textContent = `(${member.note})`;
+              rankSpan.appendChild(noteEm);
+            }
+
             li.appendChild(rankSpan);
 
             const subList = document.createElement('ul');
