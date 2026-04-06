@@ -1,20 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members List</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Members — Benpire</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .peasant-sublist {
+      list-style: none;
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
+    }
+
+    .peasant-sublist li {
+      all: unset;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+      padding: 0.15rem 0.6rem;
+      border: 1px solid rgba(201,168,76,0.12);
+      background: rgba(0,0,0,0.15);
+    }
+
+    .peasant-sublist li:hover {
+      border-color: rgba(201,168,76,0.3);
+      color: var(--parchment-dim);
+    }
+
+    .peasant-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    .peasant-row .rank {
+      min-width: 0;
+    }
+  </style>
 </head>
 <body>
-    <a href="index.html">Go Home</a>
-    <ul>
-        <li>Top command: Grand Benperor Ben</li>
-        <li>Second in command: Right hand man Dallas</li>
-        <li>Third in command: Duke Dexter</li>
-        <li>Head of TBD: Kylie(bumped down by Ben)</li>
-        <li>Head philosopher: Camdyn(creator of Cammunisim)</li>
-        <li>Knight and bank owner: Linkin</li>
-        <li>Several peasants and such that I will not be naming for a bit because im too lazy rn.</li>
+
+  <header>
+    <h1 class="site-title"><a href="index.html">Benpire</a></h1>
+    <p class="tagline">Empire of the Grand Benperor</p>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="memberList.html">Members</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="royal-divider">⚜</div>
+  </header>
+
+  <main>
+    <p class="page-title">The Noble Registry</p>
+    <ul class="member-list" id="memberList">
+      <li style="opacity:0.5; font-style:italic; border-left-color:transparent;">
+        Loading the registry...
+      </li>
     </ul>
+  </main>
+
+  <footer>
+    &copy; The Benpire &nbsp;✦&nbsp; All Territories Reserved
+  </footer>
+
+  <script>
+    fetch('members.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('memberList');
+        list.innerHTML = '';
+
+        data.members.forEach(member => {
+          const li = document.createElement('li');
+
+          // Peasantry: render as a sub-list
+          if (member.peasants) {
+            li.classList.add('peasant-row');
+
+            const rankSpan = document.createElement('span');
+            rankSpan.className = 'rank';
+            rankSpan.textContent = member.rank;
+            li.appendChild(rankSpan);
+
+            const subList = document.createElement('ul');
+            subList.className = 'peasant-sublist';
+
+            member.peasants.forEach(peasantName => {
+              const subLi = document.createElement('li');
+              subLi.textContent = peasantName;
+              subList.appendChild(subLi);
+            });
+
+            li.appendChild(subList);
+
+          } else {
+            // Normal member row
+            const rankSpan = document.createElement('span');
+            rankSpan.className = 'rank';
+            rankSpan.textContent = member.rank;
+
+            if (member.note) {
+              const noteEm = document.createElement('em');
+              noteEm.style.cssText = 'font-size:0.75rem; color:var(--text-dim); margin-left:0.4rem;';
+              noteEm.textContent = `(${member.note})`;
+              rankSpan.appendChild(noteEm);
+            }
+
+            const nameSpan = document.createElement('span');
+            nameSpan.className = 'name';
+            nameSpan.textContent = member.name;
+
+            li.appendChild(rankSpan);
+            li.appendChild(nameSpan);
+          }
+
+          list.appendChild(li);
+        });
+      })
+      .catch(err => {
+        document.getElementById('memberList').innerHTML =
+          '<li style="color:var(--red-bright);">Failed to load the registry. The scrolls may be missing.</li>';
+        console.error('Failed to load members.json:', err);
+      });
+  </script>
+
 </body>
 </html>

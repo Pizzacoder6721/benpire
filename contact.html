@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Benpire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title"><a href="index.html">Benpire</a></h1>
+    <p class="tagline">Empire of the Grand Benperor</p>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="memberList.html">Members</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="royal-divider">⚜</div>
+  </header>
+
+  <main>
+    <p class="page-title">Send a Dispatch</p>
+
+    <!-- Contact Cards -->
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:fralick.620016@swl.k12.oh.us">
+        <span class="card-icon">✉</span>
+        <div class="card-label">Imperial Courier (Email)</div>
+        <div class="card-value">fralick.620016@swl.k12.oh.us</div>
+        <div class="card-desc">Direct line to the Grand Benperor's chambers.</div>
+      </a>
+      <div class="contact-card" style="cursor:default;">
+        <span class="card-icon">📜</span>
+        <div class="card-label">Admission Scroll</div>
+        <div class="card-value">Position Form</div>
+        <div class="card-desc">Seeking rank? Visit the <a href="admission.html" style="color:var(--gold-dim);">Admission</a> page to submit your petition.</div>
+      </div>
+    </div>
+
+    <!-- Message Form -->
+    <div class="section-gap">
+      <div class="scroll-form">
+        <p class="form-title">⚜ &nbsp; Compose a Royal Dispatch &nbsp; ⚜</p>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="e.g. Sir Reginald" />
+          </div>
+          <div class="field-group">
+            <label for="rank">Your Rank / Position</label>
+            <select id="rank">
+              <option value="">— Select —</option>
+              <option>Peasant (unranked)</option>
+              <option>Knight</option>
+              <option>Duke / Duchess</option>
+              <option>Government Official</option>
+              <option>Ally State</option>
+              <option>Potential Recruit</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="subject">Subject of Dispatch</label>
+          <input type="text" id="subject" placeholder="e.g. Proposal for territorial alliance" />
+        </div>
+
+        <div class="field-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" placeholder="Speak your piece before the throne..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="handleSubmit()">
+          ✦ &nbsp; Dispatch to the Throne &nbsp; ✦
+        </button>
+
+        <div class="success-banner" id="successBanner">
+          Your dispatch has been received. The Grand Benperor shall review it in due time.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; The Benpire &nbsp;✦&nbsp; All Territories Reserved
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const name    = document.getElementById('name').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !message) {
+        alert('A dispatch must bear a name and message before reaching the throne.');
+        return;
+      }
+
+      const rank = document.getElementById('rank').value;
+      const body = `From: ${name}${rank ? ' (' + rank + ')' : ''}\n\n${message}`;
+      const mailto = `mailto:fralick.620016@swl.k12.oh.us?subject=${encodeURIComponent(subject || 'Royal Dispatch')}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+
+      document.getElementById('successBanner').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

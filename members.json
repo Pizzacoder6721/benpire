@@ -1,0 +1,50 @@
+{
+  "members": [
+    {
+      "name": "Ben",
+      "rank": "Grand Benperor",
+      "tier": 1,
+      "note": null
+    },
+    {
+      "name": "Dallas",
+      "rank": "Right Hand Man",
+      "tier": 2,
+      "note": null
+    },
+    {
+      "name": "Dexter",
+      "rank": "Duke",
+      "tier": 3,
+      "note": null
+    },
+    {
+      "name": "Kylie",
+      "rank": "Head of TBD",
+      "tier": 4,
+      "note": "Demoted by Ben"
+    },
+    {
+      "name": "Camdyn",
+      "rank": "Head Philosopher & Creator of Cammunism",
+      "tier": 4,
+      "note": null
+    },
+    {
+      "name": "Linkin",
+      "rank": "Knight & Bank Owner",
+      "tier": 5,
+      "note": null
+    },
+    {
+      "rank": "Peasantry",
+      "tier": 6,
+      "note": null,
+      "peasants": [
+        "Peasant 1",
+        "Peasant 2",
+        "Peasant 3"
+      ]
+    }
+  ]
+}
