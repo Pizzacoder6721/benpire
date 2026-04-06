@@ -39,9 +39,9 @@
     {
       "rank": "Peasantry",
       "tier": 6,
-      "note": "Apply for citizenship",
+      "note": "Apply for citizenship in the admission page",
       "peasants": [
-        "None"
+        test
       ]
     }
   ]
