@@ -39,11 +39,8 @@
     {
       "rank": "Peasantry",
       "tier": 6,
-      "note": null,
+      "note": "Apply for citizenship",
       "peasants": [
-        "Peasant 1",
-        "Peasant 2",
-        "Peasant 3"
       ]
     }
   ]
