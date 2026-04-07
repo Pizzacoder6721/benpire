@@ -90,18 +90,3 @@ Add a new object to the `"events"` array:
 
 Events are sorted: **Ongoing → Upcoming → Resolved**, then by priority (high first), then by date (newest first).
 
----
-
-## Running the Site
-
-The site uses `fetch()` so you need a local server — it won't work by double-clicking the files.
-
-```bash
-# Python
-python -m http.server
-
-# Node
-npx serve .
-```
-
-Then open http://localhost:8000.
