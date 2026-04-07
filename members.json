@@ -37,8 +37,14 @@
       "note": null
     },
     {
-      "rank": "Peasantry",
+      "name": "Grady",
+      "rank": "Police/Militia",
       "tier": 6,
+      "note": null
+    },
+    {
+      "rank": "Peasantry",
+      "tier": 7,
       "note": "Apply for citizenship in the admission page",
       "peasants": [
         
