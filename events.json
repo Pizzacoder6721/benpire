@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Annexation of the Gym",
+      "type": "expansion",
+      "status": "resolved",
+      "priority": "high",
+      "date": "2024-09-01",
+      "parties": ["Ben", "Dallas"],
+      "description": "The Benpire successfully established dominance over key sections of the Gym, citing its strategic value as a high-traffic zone ideal for recruitment and resource gathering.",
+      "outcome": "Territory secured. The Gym is now under full Benpire control."
+    },
+    {
+      "id": 2,
+      "title": "Occupation of Mr. Smiley's Room",
+      "type": "expansion",
+      "status": "resolved",
+      "priority": "medium",
+      "date": "2024-09-15",
+      "parties": ["Ben", "Dexter"],
+      "description": "Following the Gym annexation, the Benpire extended its reach into Mr. Smiley's Room, establishing a secondary stronghold.",
+      "outcome": "Room claimed. Now a recognized Benpire territory."
+    },
+    {
+      "id": 3,
+      "title": "Campaign for Mr. Walter's Room",
+      "type": "diplomacy",
+      "status": "ongoing",
+      "priority": "high",
+      "date": "2024-10-01",
+      "parties": ["Ben", "Dallas", "Camdyn"],
+      "description": "The Benpire has identified Mr. Walter's Room as a high-value target due to its vast resources, most notably reported stockpiles of hydrogen bombs. Negotiations are underway to either purchase the room or form a mutual alliance.",
+      "outcome": null
+    },
+    {
+      "id": 4,
+      "title": "Demotion of Kylie",
+      "type": "internal",
+      "status": "resolved",
+      "priority": "medium",
+      "date": "2024-10-10",
+      "parties": ["Ben", "Kylie"],
+      "description": "By decree of the Grand Benperor, Kylie was demoted from her position. The exact cause remains classified by the crown.",
+      "outcome": "Kylie retains the Head of TBD title but at reduced standing."
+    },
+    {
+      "id": 5,
+      "title": "Establishment of the Imperial Bank",
+      "type": "economic",
+      "status": "resolved",
+      "priority": "medium",
+      "date": "2024-10-20",
+      "parties": ["Linkin"],
+      "description": "Knight Linkin was granted dominion over the Benpire's treasury and officially appointed Bank Owner, centralizing the empire's economic operations.",
+      "outcome": "Bank operational. Linkin oversees all imperial finances."
+    },
+    {
+      "id": 6,
+      "title": "Founding of Cammunism",
+      "type": "internal",
+      "status": "resolved",
+      "priority": "low",
+      "date": "2024-11-01",
+      "parties": ["Camdyn"],
+      "description": "Head Philosopher Camdyn formally unveiled Cammunism, a new philosophical doctrine intended to guide the ideological foundations of the Benpire.",
+      "outcome": "Cammunism recognized as the official philosophy of the Benpire."
+    },
+    {
+      "id": 7,
+      "title": "General Recruitment Drive",
+      "type": "meeting",
+      "status": "upcoming",
+      "priority": "low",
+      "date": "2024-12-01",
+      "parties": ["Ben", "Dallas", "Camdyn"],
+      "description": "The Benpire plans to formally expand its peasantry through an organized recruitment effort. The admission form will be distributed and positions assigned.",
+      "outcome": null
+    }
+  ]
+}

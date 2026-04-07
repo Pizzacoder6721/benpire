@@ -517,3 +517,166 @@ footer {
 }
 
 .section-gap { margin-top: 2.5rem; }
+
+/* ══════════════════════════════════════════
+   EVENTS PAGE
+   ══════════════════════════════════════════ */
+
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.filter-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--gold-dim);
+  color: var(--parchment-dim);
+}
+
+.filter-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+
+/* ── Event cards ── */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.event-card {
+  border: 1px solid rgba(201,168,76,0.15);
+  padding: 1.5rem 1.8rem;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.event-card:hover {
+  border-color: rgba(201,168,76,0.35);
+  background: rgba(201,168,76,0.03);
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(201,168,76,0.05);
+  pointer-events: none;
+}
+
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.event-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--parchment);
+  font-weight: 600;
+}
+
+.event-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid;
+}
+
+/* Type badge colors */
+.badge-type-war          { color: #c0392b; border-color: #c0392b55; background: rgba(192,57,43,0.08); }
+.badge-type-diplomacy    { color: #2980b9; border-color: #2980b955; background: rgba(41,128,185,0.08); }
+.badge-type-meeting      { color: var(--gold-dim); border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.06); }
+.badge-type-expansion    { color: #27ae60; border-color: #27ae6055; background: rgba(39,174,96,0.08); }
+.badge-type-internal     { color: #8e44ad; border-color: #8e44ad55; background: rgba(142,68,173,0.08); }
+.badge-type-economic     { color: #d4ac0d; border-color: #d4ac0d55; background: rgba(212,172,13,0.08); }
+
+/* Status badge colors */
+.badge-status-ongoing    { color: #e67e22; border-color: #e67e2255; background: rgba(230,126,34,0.08); }
+.badge-status-resolved   { color: var(--text-dim); border-color: rgba(184,168,130,0.3); background: transparent; }
+.badge-status-upcoming   { color: #1abc9c; border-color: #1abc9c55; background: rgba(26,188,156,0.08); }
+
+/* Priority left-border accent */
+.priority-high   { border-left: 3px solid #c0392b; }
+.priority-medium { border-left: 3px solid var(--gold-dim); }
+.priority-low    { border-left: 3px solid rgba(201,168,76,0.2); }
+
+.event-meta {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 0.6rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.event-meta span::before {
+  margin-right: 0.3rem;
+  opacity: 0.6;
+}
+
+.event-description {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.event-outcome {
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.9rem;
+  border-left: 2px solid var(--gold-dim);
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  font-style: italic;
+  background: rgba(0,0,0,0.15);
+}
+
+.event-outcome strong {
+  color: var(--gold-dim);
+  font-style: normal;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.no-events {
+  text-align: center;
+  color: var(--text-dim);
+  font-style: italic;
+  padding: 3rem 0;
+}
