@@ -6,7 +6,7 @@
       "type": "war",
       "status": "ongoing",
       "priority": "high",
-      "date": "2025-02-13",
+      "date": "2026-02-13",
       "parties": ["Benpire", "The Orthodox Union"],
       "description": "The Benpire is in an ongoing war, but there is currently a truce between the two sides.",
       "outcome": null
@@ -17,7 +17,7 @@
       "type": "diplomacy",
       "status": "upcoming",
       "priority": "high",
-      "date": "2026-2-5",
+      "date": "2026-04-0 8",
       "parties": ["Ben", "Dallas, Mr. Walter"],
       "description": "Formal negotiations are being planned by the benpire.",
       "outcome": null
