@@ -64,18 +64,3 @@ Set it to `null` to remove the note.
 
 Delete their entire `{ }` block from the `"members"` array.
 
----
-
-## Running the Site
-
-The site won't work by just opening the files — you need a local server. Run one of these in the `benpire` folder:
-
-```bash
-# Python
-python -m http.server
-
-# Node
-npx serve .
-```
-
-Then open http://localhost:8000 in your browser.
