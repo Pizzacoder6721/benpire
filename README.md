@@ -1,10 +1,10 @@
-# Benpire — Member Guide
+# Benpire — Member & Events Guide
 
-All member data is stored in `members.json`. Edit that file to update the registry — the website updates automatically.
+All member and event data live in JSON files. Edit those files to update the site — no HTML changes needed.
 
 ---
 
-## Adding a Regular Member
+## Adding a Regular Member (`members.json`)
 
 Add a new object to the `"members"` array:
 
@@ -19,48 +19,89 @@ Add a new object to the `"members"` array:
 
 - **name** — their name
 - **rank** — their title/position
-- **tier** — controls sort order on the page (1 = highest rank, higher numbers = lower rank)
-- **note** — shows in small italic text next to their rank, e.g. `"Demoted by Ben"`. Use `null` for no note.
+- **tier** — sort order (1 = highest rank, higher numbers = lower rank)
+- **note** — italic text next to their rank e.g. `"Demoted by Ben"`. Use `null` for none.
 
 ---
 
-## Adding / Removing Peasants
+## Adding / Removing Peasants (`members.json`)
 
-The Peasantry entry has a `"peasants"` list instead of a single name. Just add or remove names:
+The Peasantry entry uses a `"peasants"` list instead of a single name:
 
 ```json
 {
   "rank": "Peasantry",
   "tier": 6,
   "note": null,
-  "peasants": [
-    "Steve",
-    "Jeff",
-    "Karen"
-  ]
+  "peasants": ["Steve", "Jeff", "Karen"]
 }
 ```
 
 ---
 
-## Adding a Note to Someone
+## Adding a Note to Someone (`members.json`)
 
-Set the `"note"` field to any text:
+Set `"note"` to any text, or `null` to remove it:
 
 ```json
-{
-  "name": "Kylie",
-  "rank": "Head of TBD",
-  "tier": 4,
-  "note": "Demoted by Ben"
-}
+{ "name": "Kylie", "rank": "Head of TBD", "tier": 4, "note": "Demoted by Ben" }
 ```
-
-Set it to `null` to remove the note.
 
 ---
 
-## Removing a Member
+## Removing a Member (`members.json`)
 
 Delete their entire `{ }` block from the `"members"` array.
 
+---
+
+## Adding an Event (`events.json`)
+
+Add a new object to the `"events"` array:
+
+```json
+{
+  "id": 8,
+  "title": "Alliance with Mr. Walter",
+  "type": "diplomacy",
+  "status": "ongoing",
+  "priority": "high",
+  "date": "2024-12-10",
+  "parties": ["Ben", "Dallas"],
+  "description": "Formal negotiations have begun.",
+  "outcome": null
+}
+```
+
+### Field reference
+
+| Field | Options | Description |
+|-------|---------|-------------|
+| `id` | any unique number | Unique ID for the event |
+| `type` | `war` `diplomacy` `meeting` `expansion` `internal` `economic` | Category — controls the badge color and filter button |
+| `status` | `ongoing` `resolved` `upcoming` | Current state of the event |
+| `priority` | `high` `medium` `low` | Controls the left-border accent color and sort order |
+| `date` | `YYYY-MM-DD` | Date of the event |
+| `parties` | array of names | Members or groups involved |
+| `description` | string | What happened / is happening |
+| `outcome` | string or `null` | Result — use `null` if still ongoing/upcoming |
+
+### Sort order on the page
+
+Events are sorted: **Ongoing → Upcoming → Resolved**, then by priority (high first), then by date (newest first).
+
+---
+
+## Running the Site
+
+The site uses `fetch()` so you need a local server — it won't work by double-clicking the files.
+
+```bash
+# Python
+python -m http.server
+
+# Node
+npx serve .
+```
+
+Then open http://localhost:8000.

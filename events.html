@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Benpire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title"><a href="index.html">Benpire</a></h1>
+    <p class="tagline">Empire of the Grand Benperor</p>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="memberList.html">Members</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="royal-divider">⚜</div>
+  </header>
+
+  <main>
+    <p class="page-title">Imperial Dispatches</p>
+
+    <!-- Filter bar — populated by JS -->
+    <div class="filter-bar" id="filterBar"></div>
+
+    <!-- Event cards — populated by JS -->
+    <div class="events-list" id="eventsList">
+      <p class="no-events">Loading the imperial record...</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; The Benpire &nbsp;✦&nbsp; All Territories Reserved
+  </footer>
+
+  <script>
+    const TYPE_LABELS = {
+      war:       '⚔ War',
+      diplomacy: '🤝 Diplomacy',
+      meeting:   '📜 Meeting',
+      expansion: '🏰 Expansion',
+      internal:  '👑 Internal',
+      economic:  '💰 Economic',
+    };
+
+    const STATUS_LABELS = {
+      ongoing:  '● Ongoing',
+      resolved: '✓ Resolved',
+      upcoming: '◆ Upcoming',
+    };
+
+    const PRIORITY_ORDER = { high: 0, medium: 1, low: 2 };
+    const STATUS_ORDER   = { ongoing: 0, upcoming: 1, resolved: 2 };
+
+    let allEvents = [];
+    let activeFilter = 'all';
+
+    function formatDate(dateStr) {
+      if (!dateStr) return '';
+      const d = new Date(dateStr + 'T00:00:00');
+      return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    function renderFilters(events) {
+      const bar = document.getElementById('filterBar');
+      const types = ['all', ...new Set(events.map(e => e.type))];
+
+      bar.innerHTML = types.map(t => `
+        <button class="filter-btn ${t === activeFilter ? 'active' : ''}"
+                onclick="setFilter('${t}')">
+          ${t === 'all' ? '✦ All' : (TYPE_LABELS[t] || t)}
+        </button>
+      `).join('');
+    }
+
+    function renderEvents(events) {
+      const list = document.getElementById('eventsList');
+      const filtered = activeFilter === 'all' ? events : events.filter(e => e.type === activeFilter);
+
+      // Sort: status order first, then priority, then date descending
+      filtered.sort((a, b) => {
+        const s = STATUS_ORDER[a.status] - STATUS_ORDER[b.status];
+        if (s !== 0) return s;
+        const p = PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority];
+        if (p !== 0) return p;
+        return new Date(b.date) - new Date(a.date);
+      });
+
+      if (filtered.length === 0) {
+        list.innerHTML = '<p class="no-events">No events found in this category.</p>';
+        return;
+      }
+
+      list.innerHTML = filtered.map(e => `
+        <div class="event-card priority-${e.priority}">
+          <div class="event-header">
+            <span class="event-title">${e.title}</span>
+            <div class="event-badges">
+              <span class="badge badge-type-${e.type}">${TYPE_LABELS[e.type] || e.type}</span>
+              <span class="badge badge-status-${e.status}">${STATUS_LABELS[e.status] || e.status}</span>
+            </div>
+          </div>
+          <div class="event-meta">
+            ${e.date ? `<span>📅 ${formatDate(e.date)}</span>` : ''}
+            ${e.parties && e.parties.length ? `<span>👥 ${e.parties.join(', ')}</span>` : ''}
+          </div>
+          <p class="event-description">${e.description}</p>
+          ${e.outcome ? `
+            <div class="event-outcome">
+              <strong>Outcome</strong>
+              ${e.outcome}
+            </div>` : ''}
+        </div>
+      `).join('');
+    }
+
+    function setFilter(type) {
+      activeFilter = type;
+      renderFilters(allEvents);
+      renderEvents(allEvents);
+    }
+
+    fetch('events.json', { cache: 'no-cache' })
+      .then(res => res.json())
+      .then(data => {
+        allEvents = data.events;
+        renderFilters(allEvents);
+        renderEvents(allEvents);
+      })
+      .catch(err => {
+        document.getElementById('eventsList').innerHTML =
+          '<p class="no-events" style="color:var(--red-bright);">Failed to load the imperial record.</p>';
+        console.error('Failed to load events.json:', err);
+      });
+  </script>
+
+</body>
+</html>
