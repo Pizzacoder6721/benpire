@@ -40,7 +40,7 @@
       "name": "Liam P.",
       "rank": "Knight",
       "tier": 6,
-      "note": "Only low knight due to lack of backround, likely to be duke in future"
+      "note": "Likely to be duke in future"
     },
     {
       "name": "Grady",
@@ -53,8 +53,7 @@
       "tier": 7,
       "note": "Apply for citizenship in the admission page",
       "peasants": [
-        "Test",
-        "test2"
+        "None"
       ]
     }
   ]
