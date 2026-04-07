@@ -71,7 +71,7 @@
   </footer>
 
   <script>
-    fetch(`members.json?t=${Date.now()}`)
+    fetch('members.json', { cache: 'no-cache' })
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('memberList');
