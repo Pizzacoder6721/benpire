@@ -17,10 +17,21 @@
       "type": "diplomacy",
       "status": "upcoming",
       "priority": "high",
-      "date": "2026-04-0 8",
+      "date": "2026-02-1",
       "parties": ["Ben", "Dallas, Mr. Walter"],
       "description": "Formal negotiations are being planned by the benpire.",
       "outcome": null
-    }
+    },
+    {
+      "id": 3,
+      "title": "gym revolt",
+      "type": "internal",
+      "status": "ongoing",
+      "priority": "high",
+      "date": "2026-03-15",
+      "parties": ["Benpire", "Galactic Empire"],
+      "description": "The Galactic empire that was formed by Mr. Seiwney is bad because they were our biggest territory, the Gym",
+      "outcome": null
+    },
   ]
 }
