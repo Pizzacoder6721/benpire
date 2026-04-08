@@ -27,30 +27,36 @@
     {
       "name": "Camdyn",
       "rank": "Head Philosopher & Creator of Cammunism",
-      "tier": 4,
+      "tier": 5,
+      "note": null
+    },
+    {
+      "name": "Carter",
+      "rank": "Head of Science",
+      "tier": 6,
       "note": null
     },
     {
       "name": "Linkin",
       "rank": "Knight & Bank Owner",
-      "tier": 5,
+      "tier": 7,
       "note": null
     },
     {
       "name": "Liam P.",
       "rank": "Knight",
-      "tier": 6,
+      "tier": 8,
       "note": "Likely to be duke in future"
     },
     {
       "name": "Grady",
       "rank": "Police/Militia",
-      "tier": 7,
+      "tier": 9,
       "note": null
     },
     {
       "rank": "Peasantry",
-      "tier": 7,
+      "tier": 10,
       "note": "Apply for citizenship in the admission page",
       "peasants": [
         "None"
