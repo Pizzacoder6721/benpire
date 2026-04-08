@@ -48,15 +48,22 @@
       "tier": 8,
       "note": "Likely to be duke in future"
     },
+    
+    {
+      "name": "Raiden",
+      "rank": "Head of brainrot",
+      "tier": 9,
+      "note": "Will help with brainrot knowledge"
+    },
     {
       "name": "Grady",
       "rank": "Police/Militia",
-      "tier": 9,
+      "tier": 10,
       "note": null
     },
     {
       "rank": "Peasantry",
-      "tier": 10,
+      "tier": 11,
       "note": "Apply for citizenship in the admission page",
       "peasants": [
         "None"
