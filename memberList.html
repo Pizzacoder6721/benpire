@@ -5,41 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Members — Benpire</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .peasant-sublist {
-      list-style: none;
-      margin-top: 0.6rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.8rem;
-    }
-
-    .peasant-sublist li {
-      all: unset;
-      font-family: 'EB Garamond', serif;
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      font-style: italic;
-      padding: 0.15rem 0.6rem;
-      border: 1px solid rgba(201,168,76,0.12);
-      background: rgba(0,0,0,0.15);
-    }
-
-    .peasant-sublist li:hover {
-      border-color: rgba(201,168,76,0.3);
-      color: var(--parchment-dim);
-    }
-
-    .peasant-row {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-    }
-
-    .peasant-row .rank {
-      min-width: 0;
-    }
-  </style>
 </head>
 <body>
 
@@ -139,6 +104,21 @@
         console.error('Failed to load members.json:', err);
       });
   </script>
+
+  <!-- Chat Widget -->
+  <div id="chat-button">⚜</div>
+  <div id="chat-box">
+    <div id="chat-header">
+      <span>Imperial Advisor</span>
+      <button id="chat-clear">Clear</button>
+    </div>
+    <div id="chat-messages"></div>
+    <div id="chat-input-row">
+      <input id="chat-input" placeholder="Speak, traveler..." />
+      <button id="chat-send">➤</button>
+    </div>
+  </div>
+  <script src="chat.js"></script>
 
 </body>
 </html>
