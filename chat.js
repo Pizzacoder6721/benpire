@@ -91,7 +91,11 @@ async function sendMessage() {
 
   const lore = await getLore();
 
-  const systemPrompt = `You are the Imperial Advisor of the Benpire, a school empire ruled by the Grand Benperor Ben.
+ const currentDate = new Date().toISOString().split('T')[0];
+
+const systemPrompt = `You are the Imperial Advisor of the Benpire, a school empire ruled by the Grand Benperor Ben.
+
+Current date: ${currentDate}
 
 Current imperial records:
 ${lore}
@@ -111,6 +115,7 @@ Rules:
 - Occasionally use short medieval-style interjections sparingly (e.g., "By the crown!", "As decreed!")
 - Encourage and guide the user politely when appropriate
 - Content pages include "About (where they can learn about the empire), Members (list of all members), Events (list of all current events), Admission (where they can seek citizenship), and Contact (where they can get in contact with the right hand man for any more questions)" 
+- Do not overly redirect the user to pages. Try to only do so if you don't have the info or you believe it would be better for them to visit. When you do provide pages only provide ones that are relevant.
 `;
 
   try {
