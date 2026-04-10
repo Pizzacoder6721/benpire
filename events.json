@@ -33,5 +33,16 @@
       "description": "The Galactic empire that was formed by Mr. Seiwney is bad because they were our biggest territory, the Gym",
       "outcome": null
     }
+    {
+      "id": 4,
+      "title": "Alliance with Gotham City Monarch",
+      "type": "diplomacy",
+      "status": "resolved",
+      "priority": "medium",
+      "date": "2026-04-7",
+      "parties": ["Benpire", "Gotham City Monarch"],
+      "description": "Made an alliance with the Gotham City Monarchy, which was made by a citizen of the Benpire that left",
+      "outcome": "success"
+    }
   ]
 }
