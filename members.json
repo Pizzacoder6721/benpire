@@ -48,22 +48,27 @@
       "tier": 8,
       "note": "Likely to be duke in future"
     },
-    
+    {
+      "name": "Tabitha",
+      "rank": "Scribe",
+      "tier": 9,
+      "note": "Write down needed info"
+    },
     {
       "name": "Raiden",
       "rank": "Head of brainrot",
-      "tier": 9,
+      "tier": 10,
       "note": "Will help with brainrot knowledge"
     },
     {
       "name": "Grady",
       "rank": "Police/Militia",
-      "tier": 10,
+      "tier": 11,
       "note": null
     },
     {
       "rank": "Peasantry",
-      "tier": 11,
+      "tier": 12,
       "note": "Apply for citizenship in the admission page",
       "peasants": [
         "James Groscost(called benpire funny even though it is very serious)"
