@@ -15,12 +15,12 @@
       "id": 2,
       "title": "Alliance with Mr. Walter",
       "type": "diplomacy",
-      "status": "upcoming",
+      "status": "resolved",
       "priority": "high",
       "date": "2026-04-10",
       "parties": ["Ben", "Dallas, Mr. Walter"],
-      "description": "Formal negotiations are being planned by the benpire.",
-      "outcome": null
+      "description": "Formal negotiations have happened with Mr. Walter.",
+      "outcome": "success"
     },
     {
       "id": 3,
