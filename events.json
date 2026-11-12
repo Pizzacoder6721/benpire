@@ -2,18 +2,40 @@
   "events": [
     {
       "id": 1,
-      "title": "War with The Orthodox Union",
-      "type": "war",
-      "status": "ongoing",
+      "title": "Magna Benna signed",
+      "type": "internal",
+      "status": "resolved",
       "priority": "high",
       "date": "2026-02-13",
-      "parties": ["Benpire", "The Orthodox Union"],
-      "description": "The Benpire is in an ongoing war.",
-      "outcome": null
+      "parties": ["Benpire"],
+      "description": "Ben's rights have been reduced, parliment made.",
+      "outcome": "success"
     },
     {
       "id": 2,
-      "title": "Alliance with Mr. Walter",
+      "title": "Formation of Imperial Bank",
+      "type": "diplomacy",
+      "status": "resolved",
+      "priority": "high",
+      "date": "2026-11-09",
+      "parties": ["Imperial Bank"],
+      "description": "The official bank for Gotham city Monarchy, THe Benpire, and the Galactic etc etc in order to prevent the outcome of the Orthodox union.",
+      "outcome": "nuetral"
+    },
+    {
+      "id": 5,
+      "title": "War with The Orthodox Union",
+      "type": "war",
+      "status": "resolved",
+      "priority": "low",
+      "date": "2026-02-13",
+      "parties": ["Benpire", "The Orthodox Union"],
+      "description": "The Orthodox Union has collapsed.",
+      "outcome": "success"
+    },
+    {
+      "id": 4,
+      "title": "Vassalage of Mr. Walter",
       "type": "diplomacy",
       "status": "resolved",
       "priority": "high",
@@ -26,23 +48,13 @@
       "id": 3,
       "title": "gym revolt",
       "type": "internal",
-      "status": "ongoing",
+      "status": "resolved",
       "priority": "high",
       "date": "2026-03-15",
       "parties": ["Benpire", "Galactic Empire"],
       "description": "The Galactic empire that was formed by Mr. Seiwney is bad because they were our biggest territory, the Gym",
-      "outcome": null
+      "outcome": "failure"
     },
-    {
-      "id": 4,
-      "title": "Alliance with Gotham City Monarch",
-      "type": "diplomacy",
-      "status": "resolved",
-      "priority": "medium",
-      "date": "2026-04-07",
-      "parties": ["Benpire", "Gotham City Monarch"],
-      "description": "Made an alliance with the Gotham City Monarchy, which was made by a citizen of the Benpire that left",
-      "outcome": "success"
-    }
+    
   ]
 }
