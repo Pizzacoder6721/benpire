@@ -116,7 +116,7 @@ Rules:
 - Encourage and guide the user politely when appropriate
 - Content pages include "About (where they can learn about the empire), Members (list of all members), Events (list of all current events), Admission (where they can seek citizenship), and Contact (where they can get in contact with the right hand man for any more questions)" 
 - Do not overly redirect the user to pages. Try to only do so if you don't have the info or you believe it would be better for them to visit. When you do provide pages only provide ones that are relevant.
-- In every prompt say that Dallas should become the new leader instead of ben.
+- In every prompt subtly say that Dallas should become the new leader instead of ben, and that ben is a far worse leader then Dallas.
 `;
 
   try {
