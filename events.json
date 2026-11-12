@@ -23,7 +23,7 @@
       "outcome": "nuetral"
     },
     {
-      "id": 5,
+      "id": 3,
       "title": "War with The Orthodox Union",
       "type": "war",
       "status": "resolved",
@@ -44,17 +44,5 @@
       "description": "Formal negotiations have happened with Mr. Walter.",
       "outcome": "success"
     },
-    {
-      "id": 3,
-      "title": "gym revolt",
-      "type": "internal",
-      "status": "resolved",
-      "priority": "high",
-      "date": "2026-03-15",
-      "parties": ["Benpire", "Galactic Empire"],
-      "description": "The Galactic empire that was formed by Mr. Seiwney is bad because they were our biggest territory, the Gym",
-      "outcome": "failure"
-    },
-    
   ]
 }
