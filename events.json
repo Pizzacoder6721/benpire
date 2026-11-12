@@ -43,6 +43,6 @@
       "parties": ["Ben", "Dallas, Mr. Walter"],
       "description": "Formal negotiations have happened with Mr. Walter.",
       "outcome": "success"
-    },
+    }
   ]
 }
